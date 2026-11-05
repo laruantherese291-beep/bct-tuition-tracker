@@ -1,0 +1,26 @@
+name: Build iOS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Flet
+        run: pip install flet==1.0.5
+
+      - name: Build IPA
+        run: flet build ipa -v
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v4
+        with:
+          name: bct-tuition-tracker-ipa
+          path: build/ipa

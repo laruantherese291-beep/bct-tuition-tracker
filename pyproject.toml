@@ -1,0 +1,13 @@
+[project]
+name = "bct-tuition-tracker"
+version = "1.0.0"
+description = "BCT Tuition Payment Tracker"
+requires-python = ">=3.10"
+dependencies = ["flet==1.0.5"]
+
+[tool.flet]
+org = "edu.bct"
+product = "BCT Tuition Tracker"
+
+[tool.flet.app]
+module = "app"
