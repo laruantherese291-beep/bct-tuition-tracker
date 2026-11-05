@@ -19,8 +19,14 @@ jobs:
       - name: Build IPA
         run: flet build ipa -v --yes
 
+      - name: Package IPA
+        run: |
+          mkdir Payload
+          cp -R "$(find build/ipa -name '*.app' -type d | head -n 1)" Payload/
+          zip -r -y BCT-Tuition-Tracker.ipa Payload
+
       - name: Upload IPA
         uses: actions/upload-artifact@v4
         with:
           name: bct-tuition-tracker-ipa
-          path: build/ipa
+          path: BCT-Tuition-Tracker.ipa

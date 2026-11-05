@@ -3,3 +3,7 @@ build/
 __pycache__/
 student_records.json
 exam.spec
+*.xcarchive/
+.flet/
+*.ipa
+Payload/
