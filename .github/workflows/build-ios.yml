@@ -16,8 +16,8 @@ jobs:
       - name: Install Flet
         run: pip install flet==1.0.5
 
-      - name: Build IPA
-        run: flet build ipa -v
+            - name: Build IPA
+        run: flet build ipa -v --yes
 
       - name: Upload IPA
         uses: actions/upload-artifact@v4
